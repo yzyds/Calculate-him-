@@ -1,0 +1,117 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Authentication;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
+using System.Diagnostics.Eventing.Reader;
+
+
+
+namespace Ab
+{
+    class P//كلاس رئيسي
+    {
+
+        
+        static void Main(string[] args)
+        {
+
+
+
+            while (true)
+            {
+
+                try
+                {
+
+                    Console.Write("your number...");
+
+                    string z = Console.ReadLine();
+                    char[] oo = { '+', '-', 'x', 'X', '÷', '/', '=', '%' };
+                    string[] zz = z.Split(oo);
+
+                    string x1 = zz[0];
+                    double x = Convert.ToDouble(x1);
+
+                    string y1 = zz[1];
+                    double y = Convert.ToDouble(y1);
+
+                    Console.WriteLine();
+
+                    char o = ' ';
+
+                    foreach (char ooo in oo)
+                    {
+                        if (z.Contains(ooo))
+                        {
+                            o = ooo;
+                            break;
+                        }
+
+                    }
+
+                    if (o == '+')
+                    {
+                        Console.WriteLine(x + y);
+                    }
+                    else if (o == '-')
+                    {
+                        Console.WriteLine(x - y);
+                    }
+                    else if (o == 'x' || o == 'X')
+                    {
+                        Console.WriteLine(x * y);
+                    }
+
+                    else if (y == 0)
+                    {
+                        Console.WriteLine("It cannot be divided by zero...");
+                    }
+
+                    else if (o == '÷' || o == '/')
+                    {
+                        Console.WriteLine(x / y);
+
+                        if (x == 0 && y == 0)
+                        {
+                            Console.WriteLine("0");
+                        }
+
+                    }
+                    else if (o == '=')
+                    {
+                        Console.WriteLine(x == y);
+                    }
+                    else if (o == '=')
+                    {
+                        Console.WriteLine(x != y);
+                    }
+                    else if (o == '%')
+                    {
+                        y = y * 10;
+                        Console.WriteLine(x - y);
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("type Erorr...");
+                    }
+
+                }
+                catch
+                {
+                    Console.WriteLine("Erorr...");
+                    Console.WriteLine(" ");
+                }
+
+            }
+                
+            
+        }
+    }
+}
+
