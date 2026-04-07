@@ -1,0 +1,24 @@
+@page "/counter"
+
+<PageTitle>Counter</PageTitle>@*لانشاء اسم الصفحه*@
+
+
+
+
+	<input type="text" @bind="i" />@*لربط المتغير الدي في السي الفارغ*@
+	
+
+
+	<input type="button" value="ارسال" @onclick = "add" />
+	
+
+
+
+@foreach(var i2 in i1 )@*لكي يجلب اللسته مافيها من اشياء لان لو كتبت اسم اللسته فقط سيعطيك اسمها فقط*@
+{
+	<p>@i2</p>
+}
+
+
+
+ 
